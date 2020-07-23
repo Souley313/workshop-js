@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Administrer des utilisateurs</title>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+
+    <body>
+        <div>   
+            <form action="" method="get" class="form-example">
+                    <legend>Ajouter un utilisateur</legend>
+                
+                    <label for="name">Nom: </label>
+                    <input type="text"  id="name" required>
+                    
+                    <label for="pwd">Mot de passe: </label>
+                    <input type="password"  id="pwd" required>
+              
+                    <button type="button" onclick="insertUsers();">Ajouter</button>
+            </form>
+        </div>
+
+        <div>   
+            <div >
+                <h2 >Liste des utilisateur</h2>
+                <p >
+                    <button type="button"  onclick="getUsers();">Rafraichir</button>
+                    <table id="tableau" border="1" cellpadding="10" cellspacing="1" width="100%">
+                        <thead>
+                            <tr>
+                            <th width="20%" >Id</th>
+                            <th width="20%">Nom</th>
+                            <th width="60%" >Mot de passe</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableau">
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>
+
