@@ -28,3 +28,46 @@ log("----");
 jules.pseudo = " jules44 ";
 log(jules.pseudo);
 log(jules.getNomComplet());
+
+log("Ajout de propriété age");
+log(jules.age);
+Personne.prototype.age = "NON DEFINI";
+log(jules.age);
+jules.age = 30;
+log(jules.age);
+
+log("Ajout de methode getInitiales ");
+Personne.prototype.getInitiales = function(){
+    var pr = this.prenom.charAt(0);
+    var no = this.nom.charAt(0);
+    return pr+no;
+}
+log(jules.getInitiales());
+
+log("Objet sans fonction constructeur");
+var robert = {
+    prenom: "Robert",
+    nom: "LEPREFET",
+    pseudo: "robert77",
+    getNomComplet : function(){
+        return this.nom + " " + this.prenom + " " + this.pseudo;
+    } 
+};
+
+afficherPersonne(robert);
+
+log("Héritage via une fonction constructeur");
+function Client(nom, prenom, pseudo, numeroClient){
+    Personne.call(this,nom, prenom, pseudo);
+
+    this.numClient = numeroClient;
+
+    this.getInfos = function(){
+        return this.numClient + " " + this.nom + " " + this.prenom;
+    }
+}
+
+var steve = new Client("LUCAS", "Steve", "steve44", "A01");
+afficherPersonne.call(this, steve);
+log(steve.numClient);
+log(steve.getInfos());
